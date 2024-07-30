@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Resetting some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+footer {
+    font-size: 0.8em;
+}
+
+/* Main gallery styling */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    padding: 16px;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+figure:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (min-width: 601px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
